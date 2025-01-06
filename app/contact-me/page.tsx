@@ -1,5 +1,5 @@
 "use client"
-import { FormDataInterface } from "../modals/contact-me"
+// import { FormDataInterface } from "../modals/contact-me"
 
 export default function contact() {
     return (
