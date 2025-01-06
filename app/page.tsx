@@ -120,6 +120,12 @@ const experience: Array<CardSectionInterface> = [
   },
   {
     title: "Frontend Develper",
+    subtitle: "Loadbalancer.org (Load balancing company)",
+    skillList: ["Angular 1", "SASS", "Network+, I completed the Network + Certification course which greatly improved my knowledge of how the web operates."],
+    content: "In my time working at loadbalancer.org, I have had the opportunity to really push my skills and problem-solving abilities. Working with Angular on their load balancing app, I became comfortable with utilizing Angular awesome OOP functionality. I am familiar with using Angular: components, services, directives, enums, resolvers, models, pipes, making api calls to name some of the parts of Angular I often work with. I have also been working with forms both template driven and reactive. Another aspect that I have really enjoyed working with is SCSS, as I have been working on converting the app from CSS to its super seed SCSS. Working with SCSS: variables, mixins, nesting and more, massively reducing repetitive code. On top of always pushing myself to improve my coding abilities, I have also learnt a lot about networking and have been taking a Network+ Certification course, where I have learnt all about the OSI model and how data is sent and received. I also work on the server side with php, performing small tasks."
+  },
+  {
+    title: "Frontend Develper",
     subtitle: "CrowdComms (Event company)",
     skillList: ["Angular.js, Angular."],
     content: "When I was working in CrowdComms as a junior front-end developer, I got the chance to work on a very large and complex projects. I gained a great experience in a company that is thriving and fast moving."
