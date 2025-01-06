@@ -156,11 +156,11 @@ const experience: Array<CardSectionInterface> = [
 export default function Home() {
   return (
     <TracingBeam>
-      <div>
+      <div className="ml-7 sm:ml-0">
         <h2 className="text-4xl my-2">Frontend Developer</h2>
         <TextHoverEffect text="Colin" />
         <section className="mb-8 mt-8">
-          <div className="flex flex-wrap justify-between gap-6">
+          <div className="flex flex-wrap justify-start gap-2 sm:gap-6">
             {skills.map(function (skill) {
               return (
                 <Skill
