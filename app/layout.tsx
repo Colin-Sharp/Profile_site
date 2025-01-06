@@ -33,7 +33,9 @@ export default function RootLayout({
           {/* Radial gradient for the container to give a faded look */}
           <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
           {/* <Header></Header> */}
-          {children}
+          <main className="min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)] max-w-screen-lg mx-auto">
+            {children}
+          </main>
           <Footer></Footer>
         </div>
       </body>

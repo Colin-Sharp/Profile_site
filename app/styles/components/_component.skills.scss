@@ -1,31 +1,38 @@
 $skill-amount: (
-    'foundation': spin-foundation,
-    'intermediate': spin-intermedate,
-    'pro': spin-pro,
-    'highly-skilled': spin-highly-skilled
+  "foundation": spin-foundation,
+  "intermediate": spin-intermediate,
+  "pro": spin-pro,
+  "highly-skilled": spin-highly-skilled,
+);
+
+$skill-colors: (
+  "foundation": rgb(251, 123, 123),
+  "intermediate": rgb(253, 253, 141),
+  "pro": rgb(253, 197, 92),
+  "highly-skilled": rgb(161, 253, 161),
 );
 
 @mixin spinning($spinOne: spin-highly-skilled, $spinTow: spin-highly-skilled2) {
-    &::before,
-    &::after {
-      content: " ";
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 140px;
-      height: 140px;
-      clip: rect(0px, 70px, 140px, 0px);
-      background-color: #121212;
-      transform: rotate3d(0, 0, 1, 180deg);
-      animation: 1s $spinTow linear 1.5s forwards;
-      z-index: 2;
-    }
-    &::after {
-      content: " ";
-      background: #d4e8e8;
-      z-index: 1;
-      animation: 1s $spinOne linear 0.5s forwards;
-    }
+  &::before,
+  &::after {
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 140px;
+    height: 140px;
+    clip: rect(0px, 70px, 140px, 0px);
+    background-color: black;
+    transform: rotate3d(0, 0, 1, 180deg);
+    animation: 1s $spinTow linear 1.5s forwards;
+    z-index: 2;
+  }
+  &::after {
+    content: " ";
+    background: #c8cbcb;
+    z-index: 1;
+    animation: 1s $spinOne linear 0.5s forwards;
+  }
 }
 
 .skill-wrapper {
@@ -41,11 +48,18 @@ $skill-amount: (
   transform: rotate3d(0, 0, 1, 0.001deg);
   pointer-events: none;
   &:hover {
-      @each $key, $val in $skill-amount {
-        &.#{$key} {
-            @include spinning(#{$val}, #{$val}2);
-        }
+    @each $key, $val in $skill-amount {
+      &.#{$key} {
+        @include spinning(#{$val}, #{$val}2);
       }
+    }
+  }
+  @each $key, $val in $skill-colors {
+    &.#{$key} {
+      .skill {
+        border: 2px solid $val;
+      }
+    }
   }
   .skill {
     pointer-events: auto;
@@ -55,63 +69,61 @@ $skill-amount: (
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-    z-index: 4;
-    border: 2px solid #a2a2a2;
+    z-index: 4;   
     min-width: 130px;
     height: 130px;
     border-radius: 50%;
-    background: #121212;
+    background: black;
   }
   .skill-background {
     position: absolute;
     height: 140px;
     min-width: 140px;
-    background: #121212;
+    background: black;
     border-radius: 50%;
   }
 }
 
 @keyframes spin-foundation {
-    from {
-      transform: rotate3d(0, 0, 1, 180deg);
-    }
-    to {
-      transform: rotate3d(0, 0, 1, 300deg);
-    }
+  from {
+    transform: rotate3d(0, 0, 1, 180deg);
   }
-  @keyframes spin-foundation2 {
-    }
+  to {
+    transform: rotate3d(0, 0, 1, 300deg);
+  }
+}
+@keyframes spin-foundation2 {
+}
 
-@keyframes spin-intermedate {
-    from {
-      transform: rotate3d(0, 0, 1, 180deg);
-    }
-    to {
-      transform: rotate3d(0, 0, 1, 360deg);
-    }
+@keyframes spin-intermediate {
+  from {
+    transform: rotate3d(0, 0, 1, 180deg);
   }
-  @keyframes spin-intermedate2 {
+  to {
+    transform: rotate3d(0, 0, 1, 360deg);
   }
+}
+@keyframes spin-intermediate2 {
+}
 
-  @keyframes spin-pro {
-    from {
-      transform: rotate3d(0, 0, 1, 180deg);
-    }
-    to {
-      transform: rotate3d(0, 0, 1, 360deg);
-    }
+@keyframes spin-pro {
+  from {
+    transform: rotate3d(0, 0, 1, 180deg);
   }
-  @keyframes spin-pro2 {
-    from {
-      background: #d4e8e8;
-      transform: rotate3d(0, 0, 1, 0deg);
-    }
-    to {
-      background: #d4e8e8;
-      transform: rotate3d(0, 0, 1, 60deg);
-    }
+  to {
+    transform: rotate3d(0, 0, 1, 360deg);
   }
-
+}
+@keyframes spin-pro2 {
+  from {
+    background: #c8cbcb;
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+  to {
+    background: #c8cbcb;
+    transform: rotate3d(0, 0, 1, 60deg);
+  }
+}
 
 @keyframes spin-highly-skilled {
   from {
@@ -123,11 +135,11 @@ $skill-amount: (
 }
 @keyframes spin-highly-skilled2 {
   from {
-    background: #d4e8e8;
+    background: #c8cbcb;
     transform: rotate3d(0, 0, 1, 0deg);
   }
   to {
-    background: #d4e8e8;
+    background: #c8cbcb;
     transform: rotate3d(0, 0, 1, 160deg);
   }
 }
