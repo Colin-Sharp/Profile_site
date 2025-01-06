@@ -3,6 +3,7 @@ import { SkillLevelEnum, SkillPropsInterface } from "./modals/skills";
 import Skill from "./components/Skill";
 import CardSection from "./components/CardSection";
 import { CardSectionInterface } from "./modals/card";
+import { TracingBeam } from "./components/tracing-beam";
 
 const skills: Array<SkillPropsInterface> = [
   {
@@ -154,36 +155,38 @@ const experience: Array<CardSectionInterface> = [
 
 export default function Home() {
   return (
-    <div>
-      <h2 className="text-4xl my-2">Frontend Developer</h2>
-      <TextHoverEffect text="Colin" />
-      <section className="mb-8 mt-8">
-        <div className="flex flex-wrap justify-between gap-6">
-          {skills.map(function (skill) {
+    <TracingBeam>
+      <div>
+        <h2 className="text-4xl my-2">Frontend Developer</h2>
+        <TextHoverEffect text="Colin" />
+        <section className="mb-8 mt-8">
+          <div className="flex flex-wrap justify-between gap-6">
+            {skills.map(function (skill) {
+              return (
+                <Skill
+                  key={skill.text}
+                  skillLevel={skill.skillLevel}
+                  text={skill.text}
+                  imageSrc={skill.imageSrc}
+                ></Skill>
+              );
+            })}
+          </div>
+        </section>
+        <div className="my-10">
+          {experience.map((work) => {
             return (
-              <Skill
-                key={skill.text}
-                skillLevel={skill.skillLevel}
-                text={skill.text}
-                imageSrc={skill.imageSrc}
-              ></Skill>
+              <CardSection
+                key={work.subtitle}
+                title={work.title}
+                subtitle={work.subtitle}
+                skillList={work.skillList}
+                content={work.content}
+              ></CardSection>
             );
           })}
         </div>
-      </section>
-      <div className="my-10">
-        {experience.map((work) => {
-          return (
-            <CardSection
-              key={work.subtitle}
-              title={work.title}
-              subtitle={work.subtitle}
-              skillList={work.skillList}
-              content={work.content}
-            ></CardSection>
-          );
-        })}
       </div>
-    </div>
+    </TracingBeam>
   );
 }
