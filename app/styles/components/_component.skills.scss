@@ -5,13 +5,6 @@ $skill-amount: (
   "highly-skilled": spin-highly-skilled,
 );
 
-$skill-colors: (
-  "foundation": rgb(251, 123, 123),
-  "intermediate": rgb(253, 253, 141),
-  "pro": rgb(253, 197, 92),
-  "highly-skilled": rgb(161, 253, 161),
-);
-
 @mixin spinning($spinOne: spin-highly-skilled, $spinTow: spin-highly-skilled2) {
   &::before,
   &::after {
@@ -29,7 +22,7 @@ $skill-colors: (
   }
   &::after {
     content: " ";
-    background: #c8cbcb;
+    background: #bababa;
     z-index: 1;
     animation: 1s $spinOne linear 0.5s forwards;
   }
@@ -54,13 +47,6 @@ $skill-colors: (
       }
     }
   }
-  @each $key, $val in $skill-colors {
-    &.#{$key} {
-      .skill {
-        border: 2px solid $val;
-      }
-    }
-  }
   .skill {
     pointer-events: auto;
     position: relative;
@@ -68,6 +54,7 @@ $skill-colors: (
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    border: 2px solid rgb(59, 59, 59);
     gap: 1rem;
     z-index: 4;   
     min-width: 130px;
@@ -116,11 +103,11 @@ $skill-colors: (
 }
 @keyframes spin-pro2 {
   from {
-    background: #c8cbcb;
+    background: #bababa;
     transform: rotate3d(0, 0, 1, 0deg);
   }
   to {
-    background: #c8cbcb;
+    background: #bababa;
     transform: rotate3d(0, 0, 1, 60deg);
   }
 }
@@ -135,11 +122,11 @@ $skill-colors: (
 }
 @keyframes spin-highly-skilled2 {
   from {
-    background: #c8cbcb;
+    background: #bababa;
     transform: rotate3d(0, 0, 1, 0deg);
   }
   to {
-    background: #c8cbcb;
+    background: #bababa;
     transform: rotate3d(0, 0, 1, 160deg);
   }
 }
