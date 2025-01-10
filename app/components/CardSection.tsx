@@ -15,7 +15,11 @@ export default function CardSection(props: CardSectionInterface) {
           );
         })}
       </ul>
-      <p className="mt-4 text-lg">{props.content}</p>
+      {props.content.map((paragraph) => {
+        return (
+          <p className="mt-4 text-lg" key={paragraph}>{paragraph}</p>
+        )
+      })}
     </section>
   );
 }

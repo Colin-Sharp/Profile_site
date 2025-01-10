@@ -1,6 +1,6 @@
 export interface CardSectionInterface {
     title: string,
     skillList: Array<string>,
-    content: string,
+    content: Array<string>,
     subtitle: string
 }
